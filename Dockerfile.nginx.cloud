@@ -2,7 +2,7 @@ FROM alpine as build
 
 RUN apk update && apk add --no-cache bash git openssh
 
-RUN git clone -b master https://github.com/RicardoGaefke/ricardogaefke-pdf.git ./app
+RUN git clone -b master https://github.com/RicardoGaefke/ricardogaefke-www.git ./app
 
 FROM nginx:alpine as publish
 
