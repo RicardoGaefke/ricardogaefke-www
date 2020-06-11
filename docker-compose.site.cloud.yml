@@ -4,12 +4,12 @@ networks:
     driver: bridge
 services:
   web-api:
-    image: ricardogaefke/ricardogaefke-pdf:pdf_site
+    image: ricardogaefke/ricardogaefke-www:www_site
     container_name: web-api
     networks:
       - my-network
   nginx:
-    image: ricardogaefke/ricardogaefke-pdf:pdf_nginx
+    image: ricardogaefke/ricardogaefke-www:www_nginx
     container_name: nginx-proxy
     ports:
       - "8080:8080"
