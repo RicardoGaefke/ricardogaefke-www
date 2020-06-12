@@ -2,7 +2,7 @@
 import { makeStyles, Theme } from '@material-ui/core';
 
 interface IStyles {
-  footer: {}
+  footer: {},
 }
 
 export default makeStyles((theme: Theme): IStyles => ({

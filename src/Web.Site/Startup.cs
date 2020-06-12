@@ -68,6 +68,8 @@ namespace RicardoGaefke.Web.Site
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
+      var cachePeriod = env.IsDevelopment() ? "600" : "31557600";
+
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
@@ -78,18 +80,44 @@ namespace RicardoGaefke.Web.Site
         // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
         app.UseHsts();
       }
+
+      app.UseCookiePolicy();
       app.UseHttpsRedirection();
-      app.UseStaticFiles();
-
       app.UseRouting();
+      app.UseCors();
 
+      app.Use((context, next) =>
+      {
+        context.Response.Headers["Author"] = "Ricardo Gaefke";
+        context.Response.Headers["Author_email"] = "ricardogaefke@gmail.com";
+        context.Response.Headers["Author_URL"] = "www.ricardogaefke.com";
+        return next.Invoke();
+      });
+
+      app.UseStaticFiles(new StaticFileOptions
+      {
+        OnPrepareResponse = ctx =>
+        {
+          ctx.Context.Response.Headers.Append("Cache-Control", $"public, max-age={cachePeriod}");
+        }
+      });
+
+      // nginx config
+      app.UseForwardedHeaders(new ForwardedHeadersOptions
+      {
+        ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+      });
+
+      app.UseAuthentication();
       app.UseAuthorization();
+      app.UseCookiePolicy();
 
       app.UseEndpoints(endpoints =>
       {
         endpoints.MapControllerRoute(
           name: "default",
           pattern: "{controller=Home}/{action=Index}/{id?}");
+        endpoints.MapFallbackToController("Index", "Home");
       });
     }
   }

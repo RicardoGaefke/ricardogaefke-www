@@ -1,5 +1,6 @@
 import React from 'react';
-import { Typography, Container } from '@material-ui/core';
+import { Typography, Container, Link } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
 import useStyles from './Styles';
 
 export default (): React.ReactElement => {
@@ -7,18 +8,27 @@ export default (): React.ReactElement => {
 
   return (
     <>
-      <Container maxWidth="md">
-        <Typography variant="h1" className={classes.text} gutterBottom>
+      <Container maxWidth="md" className={classes.container}>
+        <Typography variant="h1" className={`${classes.title} ${classes.textSpacing}`} gutterBottom>
           Incredible WebApps
         </Typography>
-        <Typography variant="h5" className={`${classes.text} ${classes.bottomSpace}`} gutterBottom>
-          I use use cloud computing to create the best experience ever. Safety,
+        <Typography variant="h2" className={`${classes.subtitle} ${classes.textSpacing} ${classes.bottomSpace}`} gutterBottom>
+          I use use Microsoft Azure and modern dev technoligies to provide safety,
           performance and high availability together.
         </Typography>
-        <Typography variant="h6" className={classes.text}>
-          I have the pleasure of been a developer for the last 20 years. In all these years
-          I created apps for several market segments: Government, United Nations Organization,
-          oil companies, education and more.
+        <Typography variant="h3" className={`${classes.text} ${classes.textSpacing}`}>
+          This is an example of Azure Linux WebApp (docker-compose). It uses ASP.NET Core 3.1 and
+          server side rendered React. You can see here the page&nbsp;
+          <Link
+            title="How It Works"
+            color="textPrimary"
+            underline="always"
+            component={NavLink}
+            to="/how"
+          >
+            How It Works
+          </Link>
+          .
         </Typography>
       </Container>
     </>

@@ -9,7 +9,13 @@ export default (): React.ReactElement<any> => {
     <footer className={classes.footer}>
       <Container maxWidth="sm">
         <Typography variant="body1" align="center">
-          <Link href="https://github.com/RicardoGaefke/ricardogaefke-pdf" title="GitHub Project" color="inherit" target="_blank">
+          <Link
+            href="https://github.com/RicardoGaefke/ricardogaefke-pdf"
+            title="GitHub Project"
+            color="inherit"
+            target="_blank"
+            underline="none"
+          >
             Ricardo Gaefke &copy; 2020
           </Link>
         </Typography>
