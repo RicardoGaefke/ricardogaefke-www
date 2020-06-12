@@ -17,7 +17,7 @@ export default makeStyles((theme: Theme): IStyles => ({
     flexGrow: 1,
   },
   bar: {
-    backgroundColor: (theme.palette.type === 'dark') ? 'rgba(255,255,255,0.05)' : theme.palette.primary.main,
+    backgroundColor: (theme.palette.type === 'dark') ? 'rgba(59,59,59,1)' : theme.palette.primary.main,
     color: (theme.palette.type === 'dark') ? '#fff' : 'rgba(233,233,233,1)',
   },
 }));

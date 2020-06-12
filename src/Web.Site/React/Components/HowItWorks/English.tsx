@@ -34,7 +34,7 @@ export default (): React.ReactElement => {
         &nbsp;are background services that are perfect for services integration and/or long time tasks
         (like PDF generation and external API calls).
       </Typography>
-      <Typography variant="body1" align="justify" className={classes.paragraph}>
+      <Typography component="div" variant="body1" align="justify" className={classes.paragraph}>
         WebJobs run connected to Azure Storage Queues and one of the best resources (in my opinion) is the
         ability to use
         <Chip label="-poison" size="small" className={classes.label} />
@@ -50,7 +50,7 @@ export default (): React.ReactElement => {
         Tech summary:
       </Typography>
 
-      <Typography variant="body1" align="justify" className={classes.paragraph}>
+      <Typography component="div" variant="body1" align="justify" className={classes.paragraph}>
         <Chip label="ASP.NET Core" size="small" className={classes.chip} />
         <Chip label="Azure" size="small" className={classes.chip} />
         <Chip label="Azure Pipelines" size="small" className={classes.chip} />
@@ -136,7 +136,7 @@ export default (): React.ReactElement => {
         </TableRow>
       </Table>
 
-      <Typography variant="body1" align="justify" className={classes.paragraph}>
+      <Typography component="div" variant="body1" align="justify" className={classes.paragraph}>
         This application is automatically built, tested and deployed by Azure Pipelines. Each
         git push to
         <Chip label="master" size="small" className={classes.label} />
