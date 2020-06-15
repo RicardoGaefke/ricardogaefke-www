@@ -10,7 +10,7 @@ export default (): React.ReactElement<any> => {
       <Container maxWidth="sm">
         <Typography variant="body1" align="center">
           <Link
-            href="https://github.com/RicardoGaefke/ricardogaefke-pdf"
+            href="https://github.com/RicardoGaefke/ricardogaefke-www"
             title="GitHub Project"
             color="inherit"
             target="_blank"

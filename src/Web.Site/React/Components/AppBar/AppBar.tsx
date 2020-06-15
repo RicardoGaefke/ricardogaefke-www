@@ -6,7 +6,7 @@ import {
 import useStyles from './Styles';
 // import LoginMenu from './LoginMenu/LoginMenu';
 import ConfigButton from './BtnConfig/ConfigButton';
-import HowItWorks from './BtnHowItWorks/BtnHowItWorks';
+import HowItWorks from './BtnHowItWorks/Menu';
 
 export default (): React.ReactElement => {
   const classes = useStyles({});
@@ -26,7 +26,6 @@ export default (): React.ReactElement => {
               Ricardo Gaefke
             </Link>
           </Typography>
-          {/* <LoginMenu /> */}
           <HowItWorks />
           <ConfigButton />
         </Toolbar>
