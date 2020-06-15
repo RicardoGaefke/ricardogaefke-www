@@ -1,6 +1,6 @@
 import React from 'react';
-import { Typography, Container, Link } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
+import { Typography, Container } from '@material-ui/core';
+import Link from '../../Link/Link';
 import useStyles from './Styles';
 
 export default (): React.ReactElement => {
@@ -21,13 +21,9 @@ export default (): React.ReactElement => {
           server side rendered React. You can see here the page&nbsp;
           <Link
             title="How It Works"
-            color="textPrimary"
-            underline="always"
-            component={NavLink}
             to="/how"
-          >
-            How It Works
-          </Link>
+            text="How It Works"
+          />
           .
         </Typography>
       </Container>

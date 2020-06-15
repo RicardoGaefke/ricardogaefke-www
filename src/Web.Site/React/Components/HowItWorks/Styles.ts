@@ -7,6 +7,7 @@ interface IStyles {
   chip: {},
   label: {},
   divider: {},
+  grid: {},
 }
 
 export default makeStyles((theme: Theme): IStyles => ({
@@ -30,5 +31,8 @@ export default makeStyles((theme: Theme): IStyles => ({
   divider: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
+  },
+  grid: {
+    textAlign: 'center',
   },
 }));

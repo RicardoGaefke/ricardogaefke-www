@@ -1,9 +1,9 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import {
-  Divider, Link, Chip,
-  Table, TableRow, TableCell,
+  Divider, Chip, Grid,
 } from '@material-ui/core';
+import Link from '../Link/Link';
 import useStyles from './Styles';
 
 export default (): React.ReactElement => {
@@ -28,9 +28,8 @@ export default (): React.ReactElement => {
           href="https://docs.microsoft.com/pt-br/azure/app-service/webjobs-create"
           target="_blank"
           title="Azure WebJobs"
-        >
-          Azure WebJobs
-        </Link>
+          text="Azure WebJobs"
+        />
         &nbsp;are background services that are perfect for services integration and/or long time tasks
         (like PDF generation and external API calls).
       </Typography>
@@ -81,9 +80,8 @@ export default (): React.ReactElement => {
           href="https://github.com/RicardoGaefke/ricardogaefke-pdf"
           target="_blank"
           title="ricardogaefke-pdf repo"
-        >
-          GitHub/RicardoGaefke/ricardogaefke-pdf
-        </Link>
+          text="GitHub/RicardoGaefke/ricardogaefke-pdf"
+        />
         .
       </Typography>
 
@@ -98,43 +96,64 @@ export default (): React.ReactElement => {
           href="https://hub.docker.com/r/ricardogaefke/ricardogaefke-pdf"
           target="_blank"
           title="ricardogaefke-pdf Docker registry"
-        >
-          docker/ricardogaefke/ricardogaefke-pdf
-        </Link>
+          text="docker/ricardogaefke/ricardogaefke-pdf"
+        />
         .
       </Typography>
 
       <Divider className={classes.divider} />
 
-      <Typography variant="h4" align="center">
+      <Typography variant="h4" align="center" gutterBottom>
         Azure Pipelines
       </Typography>
 
-      <Table>
-        <TableRow>
-          <TableCell align="center">
-            <Link
-              href="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf/_build?definitionId=30&_a=summary"
-              target="_blank"
-              title="Build status"
-            >
-              <img src="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf/_apis/build/status/ricardogaefke-pdf" alt="Build status" />
-            </Link>
-          </TableCell>
-          <TableCell align="center">
-            <Link
-              href="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf/_release?_a=releases&view=mine&definitionId=1"
-              target="_blank"
-              title="Release status"
-            >
-              <img
-                src="https://vsrm.dev.azure.com/ricardogaefke/_apis/public/Release/badge/7491df87-aec5-4b88-8b61-220428b021a8/1/1"
-                alt="Release status"
-              />
-            </Link>
-          </TableCell>
-        </TableRow>
-      </Table>
+      <Grid
+        container
+        spacing={3}
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
+        <Grid
+          item
+          xs={12}
+          md={12}
+          lg={6}
+          className={classes.grid}
+        >
+          <Link
+            href="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf/_build?definitionId=30&_a=summary"
+            target="_blank"
+            title="Build status"
+            element={(
+              <>
+                <img src="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf/_apis/build/status/ricardogaefke-pdf" alt="Build status" />
+              </>
+            )}
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={12}
+          lg={6}
+          className={classes.grid}
+        >
+          <Link
+            href="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf/_release?_a=releases&view=mine&definitionId=1"
+            target="_blank"
+            title="Release status"
+            element={(
+              <>
+                <img
+                  src="https://vsrm.dev.azure.com/ricardogaefke/_apis/public/Release/badge/7491df87-aec5-4b88-8b61-220428b021a8/1/1"
+                  alt="Release status"
+                />
+              </>
+            )}
+          />
+        </Grid>
+      </Grid>
 
       <Typography component="div" variant="body1" align="justify" className={classes.paragraph}>
         This application is automatically built, tested and deployed by Azure Pipelines. Each
@@ -150,9 +169,8 @@ export default (): React.ReactElement => {
           href="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf"
           target="_blank"
           title="ricardogaefke-pdf Azure Pipeline"
-        >
-          Azure Pipeline
-        </Link>
+          text="Azure Pipeline"
+        />
         .
       </Typography>
     </>
