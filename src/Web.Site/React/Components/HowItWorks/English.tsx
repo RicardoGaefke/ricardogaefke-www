@@ -15,48 +15,23 @@ export default (): React.ReactElement => {
         How It Works
       </Typography>
       <Typography variant="subtitle1" align="center" className={classes.paragraph} gutterBottom>
-        This is a simple example of async integration using Azure WebJobs on an Azure Linux docker-compose WebApp.
+        This is a simple example of ASP.NET Core + SSR React + NGINX WebApp using an Azure Linux docker-compose WebApp.
       </Typography>
       <Divider />
       <Typography variant="body1" align="justify" className={classes.paragraph} gutterBottom>
-        It has a simple form to fill with some information (just like a kind of inspection). Inserted data is sent
-        to server and you&apos;ll always receive an answer. If everything runs fine, you&apos;ll receive an email
-        with your PDF report in the Languages you choose. Otherwise, you&apos;ll receive an error message.
+        This could be your WebApp/website with incredible performance and really low cost.
       </Typography>
-      <Typography variant="body1" align="justify" className={classes.paragraph}>
-        <Link
-          href="https://docs.microsoft.com/pt-br/azure/app-service/webjobs-create"
-          target="_blank"
-          title="Azure WebJobs"
-          text="Azure WebJobs"
-        />
-        &nbsp;are background services that are perfect for services integration and/or long time tasks
-        (like PDF generation and external API calls).
-      </Typography>
-      <Typography component="div" variant="body1" align="justify" className={classes.paragraph}>
-        WebJobs run connected to Azure Storage Queues and one of the best resources (in my opinion) is the
-        ability to use
-        <Chip label="-poison" size="small" className={classes.label} />
-        queue. When a run fails after X times (default is five), the message is sent
-        to a
-        <Chip label="-poison" size="small" className={classes.label} />
-        queue. So if for any reason your execution falls in an error, you can have a second WebJob Function
-        connected to the
-        <Chip label="-poison" size="small" className={classes.label} />
-        queue to handle the situation.
-      </Typography>
+
       <Typography variant="body1" align="justify" className={classes.paragraph}>
         Tech summary:
       </Typography>
 
-      <Typography component="div" variant="body1" align="justify" className={classes.paragraph}>
+      <Typography component="div" variant="body1" align="justify" className={classes.paragraph} gutterBottom>
         <Chip label="ASP.NET Core" size="small" className={classes.chip} />
         <Chip label="Azure" size="small" className={classes.chip} />
         <Chip label="Azure Pipelines" size="small" className={classes.chip} />
         <Chip label="Azure SQL" size="small" className={classes.chip} />
         <Chip label="Azure Storage" size="small" className={classes.chip} />
-        <Chip label="Azure WebApp" size="small" className={classes.chip} />
-        <Chip label="Azure WebJobs" size="small" className={classes.chip} />
         <Chip label="C#" size="small" className={classes.chip} />
         <Chip label="Docker" size="small" className={classes.chip} />
         <Chip label="GitHub" size="small" className={classes.chip} />
@@ -69,18 +44,36 @@ export default (): React.ReactElement => {
         <Chip label="TypeScript" size="small" className={classes.chip} />
       </Typography>
 
+      <Typography variant="body1" align="justify" className={classes.paragraph} gutterBottom>
+        Check these projects:
+      </Typography>
+      <Typography variant="body1" component="div" align="justify" className={classes.paragraph}>
+        <Link
+          href="https://webjobs.ricardogaefke.com/"
+          title="webjobs example"
+          text="WebJobs example - convert XML to JSON"
+        />
+      </Typography>
+      <Typography variant="body1" component="div" align="justify" className={classes.paragraph}>
+        <Link
+          href="https://pdf.ricardogaefke.com/"
+          title="webjobs example"
+          text="WebJobs example - generate PDF certificate"
+        />
+      </Typography>
+
       <Divider className={classes.divider} />
 
       <Typography variant="h4" align="center">
         GitHub
       </Typography>
       <Typography variant="body1" align="justify" className={classes.paragraph}>
-        The repo of this example (Web.Site + WebJob) is public and can be found at&nbsp;
+        The repo of this example is public and can be found&nbsp;
         <Link
-          href="https://github.com/RicardoGaefke/ricardogaefke-pdf"
+          href="https://github.com/RicardoGaefke/ricardogaefke-www"
           target="_blank"
-          title="ricardogaefke-pdf repo"
-          text="GitHub/RicardoGaefke/ricardogaefke-pdf"
+          title="ricardogaefke-www repo"
+          text="here"
         />
         .
       </Typography>
@@ -91,12 +84,12 @@ export default (): React.ReactElement => {
         Docker registry
       </Typography>
       <Typography variant="body1" align="justify" className={classes.paragraph}>
-        The containers of this app are registered in a public repo and can be found at&nbsp;
+        The containers of this app are registered in a public repo and can be found&nbsp;
         <Link
           href="https://hub.docker.com/r/ricardogaefke/ricardogaefke-pdf"
           target="_blank"
           title="ricardogaefke-pdf Docker registry"
-          text="docker/ricardogaefke/ricardogaefke-pdf"
+          text="here"
         />
         .
       </Typography>
@@ -122,12 +115,12 @@ export default (): React.ReactElement => {
           className={classes.grid}
         >
           <Link
-            href="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf/_build?definitionId=30&_a=summary"
+            href="https://dev.azure.com/ricardogaefke/ricardogaefke-www/_build?definitionId=31"
             target="_blank"
             title="Build status"
             element={(
               <>
-                <img src="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf/_apis/build/status/ricardogaefke-pdf" alt="Build status" />
+                <img src="https://dev.azure.com/ricardogaefke/ricardogaefke-www/_apis/build/status/ricardogaefke-www" alt="Build status" />
               </>
             )}
           />
@@ -140,13 +133,13 @@ export default (): React.ReactElement => {
           className={classes.grid}
         >
           <Link
-            href="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf/_release?_a=releases&view=mine&definitionId=1"
+            href="https://dev.azure.com/ricardogaefke/ricardogaefke-www/_release?_a=releases&view=mine&definitionId=1"
             target="_blank"
             title="Release status"
             element={(
               <>
                 <img
-                  src="https://vsrm.dev.azure.com/ricardogaefke/_apis/public/Release/badge/7491df87-aec5-4b88-8b61-220428b021a8/1/1"
+                  src="https://vsrm.dev.azure.com/ricardogaefke/_apis/public/Release/badge/473b0ccf-b380-409c-b457-5db0d7566ff8/1/1"
                   alt="Release status"
                 />
               </>
@@ -166,9 +159,9 @@ export default (): React.ReactElement => {
       <Typography variant="body1" align="justify" className={classes.paragraph} gutterBottom>
         This is the public&nbsp;
         <Link
-          href="https://dev.azure.com/ricardogaefke/ricardogaefke-pdf"
+          href="https://dev.azure.com/ricardogaefke/ricardogaefke-www"
           target="_blank"
-          title="ricardogaefke-pdf Azure Pipeline"
+          title="ricardogaefke-www Azure Pipeline"
           text="Azure Pipeline"
         />
         .

@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 interface IStyles {
   container: {},
+  paper: {},
 }
 
 export default makeStyles((): IStyles => ({
@@ -12,5 +13,8 @@ export default makeStyles((): IStyles => ({
     '@media screen and (min-width: 768px)': {
       paddingTop: 30,
     },
+  },
+  paper: {
+    paddingBottom: 20,
   },
 }));

@@ -1,9 +1,8 @@
 import React from 'react';
 import {
-  Container, Grid, Paper, Divider,
+  Container, Grid, Paper,
 } from '@material-ui/core';
 import useStyles from './Styles';
-import BtnHow from './BtnHow/BtnHow';
 
 interface IProps {
   children: React.ReactElement,
@@ -27,10 +26,8 @@ export default (props: IProps): React.ReactElement => {
           md={6}
           xs={12}
         >
-          <Paper elevation={3}>
+          <Paper elevation={3} className={classes.paper}>
             {children}
-            <Divider />
-            <BtnHow />
           </Paper>
         </Grid>
       </Grid>
