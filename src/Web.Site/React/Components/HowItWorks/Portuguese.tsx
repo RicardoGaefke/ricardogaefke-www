@@ -23,7 +23,7 @@ export default (): React.ReactElement => {
         Este poderia ser teu WebApp/website com incrível performance e um custo realmente baixo.
       </Typography>
 
-      <Typography variant="body1" align="justify" className={classes.paragraph}>
+      <Typography variant="body1" align="justify" component="div" className={classes.paragraph}>
         Tech summary:
       </Typography>
 

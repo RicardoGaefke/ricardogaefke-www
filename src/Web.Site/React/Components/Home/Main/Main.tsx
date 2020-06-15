@@ -1,32 +1,37 @@
 import React from 'react';
 import { Typography, Container } from '@material-ui/core';
+// eslint-disable-next-line no-unused-vars
+import { withTranslation, WithTranslation } from 'react-i18next';
 import Link from '../../Link/Link';
 import useStyles from './Styles';
+import setLanguage from './Language';
 
-export default (): React.ReactElement => {
-  const classes = useStyles({});
+export default withTranslation()(
+  (props: WithTranslation): React.ReactElement<WithTranslation> => {
+    setLanguage();
+    const classes = useStyles({});
+    const { t } = props;
 
-  return (
-    <>
-      <Container maxWidth="md" className={classes.container}>
-        <Typography variant="h1" className={`${classes.title} ${classes.textSpacing}`} gutterBottom>
-          Incredible WebApps
-        </Typography>
-        <Typography variant="h2" className={`${classes.subtitle} ${classes.textSpacing} ${classes.bottomSpace}`} gutterBottom>
-          I use use Microsoft Azure and modern dev technoligies to provide safety,
-          performance and high availability together.
-        </Typography>
-        <Typography variant="h3" className={`${classes.text} ${classes.textSpacing}`}>
-          This is an example of Azure Linux WebApp (docker-compose). It uses ASP.NET Core 3.1 and
-          server side rendered React. You can see here the page&nbsp;
-          <Link
-            title="How It Works"
-            to="/how"
-            text="How It Works"
-          />
-          .
-        </Typography>
-      </Container>
-    </>
-  );
-};
+    return (
+      <>
+        <Container maxWidth="md" className={classes.container}>
+          <Typography variant="h1" className={`${classes.title} ${classes.textSpacing}`} gutterBottom>
+            {t('HomePage:title')}
+          </Typography>
+          <Typography variant="h2" className={`${classes.subtitle} ${classes.textSpacing} ${classes.bottomSpace}`} gutterBottom>
+            {t('HomePage:subtitle')}
+          </Typography>
+          <Typography variant="h3" className={`${classes.text} ${classes.textSpacing}`}>
+            {t('HomePage:text')}
+            <Link
+              title={t('HomePage:link')}
+              to="/how"
+              text={t('HomePage:link')}
+            />
+            .
+          </Typography>
+        </Container>
+      </>
+    );
+  },
+);
