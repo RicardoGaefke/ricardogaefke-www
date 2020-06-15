@@ -86,7 +86,7 @@ export default (): React.ReactElement => {
       <Typography variant="body1" align="justify" className={classes.paragraph}>
         The containers of this app are registered in a public repo and can be found&nbsp;
         <Link
-          href="https://hub.docker.com/r/ricardogaefke/ricardogaefke-pdf"
+          href="https://hub.docker.com/r/ricardogaefke/ricardogaefke-www"
           target="_blank"
           title="ricardogaefke-pdf Docker registry"
           text="here"
