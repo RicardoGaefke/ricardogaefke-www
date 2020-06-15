@@ -36,6 +36,7 @@ export default withTranslation()(
     return (
       <>
         <Button
+          color="inherit"
           aria-controls="simple-menu"
           aria-haspopup="true"
           title={t('BtnHowItWorks:how.title')}
