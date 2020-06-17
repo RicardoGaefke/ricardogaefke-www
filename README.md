@@ -4,7 +4,7 @@ This is a simple example of ASP.NET Core + SSR React + NGINX WebApp using an Azu
 
 |Build status|Release status|
 |---|---|
-|[![Build Status](https://dev.azure.com/ricardogaefke/ricardogaefke-www/_apis/build/status/ricardogaefke-www)](https://dev.azure.com/ricardogaefke/ricardogaefke-www/_build?definitionId=31)|[https://vsrm.dev.azure.com/ricardogaefke/_apis/public/Release/badge/473b0ccf-b380-409c-b457-5db0d7566ff8/1/1)](https://dev.azure.com/ricardogaefke/ricardogaefke-www/_release?_a=releases&view=mine&definitionId=1)|
+|[![Build Status](https://dev.azure.com/ricardogaefke/ricardogaefke-www/_apis/build/status/ricardogaefke-www)](https://dev.azure.com/ricardogaefke/ricardogaefke-www/_build?definitionId=31)|[(https://vsrm.dev.azure.com/ricardogaefke/_apis/public/Release/badge/473b0ccf-b380-409c-b457-5db0d7566ff8/1/1)](https://dev.azure.com/ricardogaefke/ricardogaefke-www/_release?_a=releases&view=mine&definitionId=1)|
 
 ## How it works
 
